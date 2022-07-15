@@ -1,0 +1,44 @@
+<div class="sidebar-wrapper">
+    <div class="logo">
+        <a [routerLink]="'/home'" class="simple-text">
+            <div class="logo-img">
+                <img src="/assets/img/logowhite.png" />
+            </div>
+            absences
+        </a>
+    </div>
+    <ul class="nav responsive-nav">
+
+        <li *ngIf="isAdmin()" routerLinkActive="active">
+            <a [routerLink]="'/menu/absences'">
+                <i class="pi pi-book"></i>
+                <p>Abcences</p>
+            </a>
+        </li>
+
+        <li routerLinkActive="active">
+            <a [routerLink]="'/menu/annonces'">
+                <i class="pi pi-calendar"></i>
+                <p>Annonces</p>
+            </a>
+        </li>
+        <li routerLinkActive="active">
+            <a [routerLink]="'/menu/messages'">
+                <i class="pi pi-envelope"></i>
+                <p>Messages</p>
+            </a>
+        </li>
+        <li routerLinkActive="active">
+            <a [routerLink]="'/menu/profile'">
+                <i class="pi pi-user"></i>
+                <p>Profile</p>
+            </a>
+        </li>
+        <li routerLinkActive="active" class="active-pro brand">
+            <a>
+
+                <p id="message" class="text-center">Tous droits réservés © 2022 </p>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,461 @@
+/*!
+
+ =========================================================
+ * Light Bootstrap Dashboard Angular - v1.5.1
+ =========================================================
+
+ * Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-angular2
+ * Copyright 2016 Creative Tim (http://www.creative-tim.com)
+ * Licensed under MIT
+
+ =========================================================
+
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ */
+/*      light colors         */
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+/* @import "lbd/variables";
+@import "lbd/typography"; */
+.sidebar,
+.bootstrap-navbar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 260px;
+  display: block;
+  z-index: 5;
+  color: #fff;
+  font-weight: 200;
+  background-size: cover;
+  background-position: center center;
+}
+
+.sidebar .sidebar-wrapper,
+.bootstrap-navbar .sidebar-wrapper {
+  position: relative;
+  max-height: calc(100vh - 75px);
+  min-height: 100%;
+  overflow: auto;
+  width: 260px;
+  z-index: 4;
+  padding-bottom: 75px;
+}
+
+.sidebar .sidebar-wrapper .dropdown .dropdown-backdrop,
+.bootstrap-navbar .sidebar-wrapper .dropdown .dropdown-backdrop {
+  display: none !important;
+}
+
+.sidebar .sidebar-background,
+.bootstrap-navbar .sidebar-background {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  display: block;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center center;
+}
+
+.sidebar .logo,
+.bootstrap-navbar .logo {
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar .logo p,
+.bootstrap-navbar .logo p {
+  float: left;
+  font-size: 20px;
+  margin: 10px 10px;
+  color: #FFFFFF;
+  line-height: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.sidebar .logo .simple-text,
+.bootstrap-navbar .logo .simple-text {
+  text-transform: uppercase;
+  padding: 5px 0px;
+  display: block;
+  font-size: 18px;
+  color: #FFFFFF;
+  text-align: left;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.sidebar .logo-img,
+.bootstrap-navbar .logo-img {
+  width: 30px;
+  display: inline-block;
+  max-height: 30px;
+  margin-right: 10px;
+}
+
+.sidebar .logo-img img,
+.bootstrap-navbar .logo-img img {
+  width: 35px;
+  top: 11px;
+  position: absolute;
+}
+
+.sidebar .logo-tim,
+.bootstrap-navbar .logo-tim {
+  border-radius: 50%;
+  border: 1px solid #333;
+  display: block;
+  height: 61px;
+  width: 61px;
+  float: left;
+  overflow: hidden;
+}
+
+.sidebar .logo-tim img,
+.bootstrap-navbar .logo-tim img {
+  width: 60px;
+  height: 60px;
+}
+
+.sidebar .nav,
+.bootstrap-navbar .nav {
+  margin-top: 20px;
+  float: none;
+}
+
+.sidebar .nav li > a,
+.bootstrap-navbar .nav li > a {
+  color: #FFFFFF;
+  margin: 5px 15px;
+  opacity: .86;
+  border-radius: 4px;
+  display: block;
+}
+
+.sidebar .nav li:hover > a,
+.bootstrap-navbar .nav li:hover > a {
+  background: rgba(255, 255, 255, 0.13);
+  opacity: 1;
+}
+
+.sidebar .nav li.active > a,
+.bootstrap-navbar .nav li.active > a {
+  color: #FFFFFF;
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.23);
+}
+
+.sidebar .nav li a.dropdown-toggle,
+.bootstrap-navbar .nav li a.dropdown-toggle {
+  background-color: transparent;
+  outline: none;
+}
+
+.sidebar .nav li.separator,
+.bootstrap-navbar .nav li.separator {
+  margin: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar .nav li.separator + li,
+.bootstrap-navbar .nav li.separator + li {
+  margin-top: 31px;
+}
+
+.sidebar .nav p,
+.bootstrap-navbar .nav p {
+  margin: 0;
+  line-height: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-left: 45px;
+  color: #FFFFFF;
+}
+
+.sidebar .nav i,
+.bootstrap-navbar .nav i {
+  font-size: 28px;
+  float: left;
+  margin-right: 15px;
+  line-height: 30px;
+  width: 30px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.sidebar .nav .caret,
+.bootstrap-navbar .nav .caret {
+  margin-top: 13px;
+  position: absolute;
+  right: 30px;
+}
+
+.sidebar .logo,
+.bootstrap-navbar .logo {
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar .logo p,
+.bootstrap-navbar .logo p {
+  float: left;
+  font-size: 20px;
+  margin: 10px 10px;
+  color: #FFFFFF;
+  line-height: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.sidebar .logo .simple-text,
+.bootstrap-navbar .logo .simple-text {
+  text-transform: uppercase;
+  padding: 5px 0px 5px 15px;
+  display: block;
+  font-size: 18px;
+  color: #FFFFFF;
+  text-align: left;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.sidebar .logo-tim,
+.bootstrap-navbar .logo-tim {
+  border-radius: 50%;
+  border: 1px solid #333;
+  display: block;
+  height: 61px;
+  width: 61px;
+  float: left;
+  overflow: hidden;
+}
+
+.sidebar .logo-tim img,
+.bootstrap-navbar .logo-tim img {
+  width: 60px;
+  height: 60px;
+}
+
+.sidebar:after, .sidebar:before,
+.bootstrap-navbar:after,
+.bootstrap-navbar:before {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.sidebar:before,
+.bootstrap-navbar:before {
+  opacity: .33;
+  background: #000000;
+}
+
+.sidebar:after,
+.bootstrap-navbar:after {
+  background: #787878;
+  background: -webkit-gradient(linear, left top, left bottom, from(#787878), to(#343434));
+  background: linear-gradient(to bottom, #787878 0%, #343434 100%);
+  background-size: 150% 150%;
+  z-index: 3;
+  opacity: 1;
+}
+
+.sidebar[data-image]:after, .sidebar.has-image:after,
+.bootstrap-navbar[data-image]:after,
+.bootstrap-navbar.has-image:after {
+  opacity: .8;
+}
+
+.sidebar[data-color="blue"]:after,
+.bootstrap-navbar[data-color="blue"]:after {
+  background: #1F77D0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#1F77D0), to(#533ce1));
+  background: linear-gradient(to bottom, #1F77D0 0%, #533ce1 100%);
+  background-size: 150% 150%;
+}
+
+.sidebar[data-color="azure"]:after,
+.bootstrap-navbar[data-color="azure"]:after {
+  background: #1DC7EA;
+  background: -webkit-gradient(linear, left top, left bottom, from(#1DC7EA), to(#4091ff));
+  background: linear-gradient(to bottom, #1DC7EA 0%, #4091ff 100%);
+  background-size: 150% 150%;
+}
+
+.sidebar[data-color="green"]:after,
+.bootstrap-navbar[data-color="green"]:after {
+  background: #87CB16;
+  background: -webkit-gradient(linear, left top, left bottom, from(#87CB16), to(#6dc030));
+  background: linear-gradient(to bottom, #87CB16 0%, #6dc030 100%);
+  background-size: 150% 150%;
+}
+
+.sidebar[data-color="orange"]:after,
+.bootstrap-navbar[data-color="orange"]:after {
+  background: #FFA534;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFA534), to(#ff5221));
+  background: linear-gradient(to bottom, #FFA534 0%, #ff5221 100%);
+  background-size: 150% 150%;
+}
+
+.sidebar[data-color="red"]:after,
+.bootstrap-navbar[data-color="red"]:after {
+  background: #FBAF41;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FBAF41), to(#FBAF41));
+  background: linear-gradient(to bottom, #FBAF41 0%, #FBAF41 100%);
+  background-size: 150% 150%;
+}
+
+.sidebar[data-color="purple"]:after,
+.bootstrap-navbar[data-color="purple"]:after {
+  background: #9368E9;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9368E9), to(#943bea));
+  background: linear-gradient(to bottom, #9368E9 0%, #943bea 100%);
+  background-size: 150% 150%;
+}
+
+.main-panel {
+  background: rgba(203, 203, 210, 0.15);
+  position: relative;
+  z-index: 2;
+  float: right;
+  width: calc(100% - 260px);
+  min-height: 100%;
+}
+
+.main-panel .main-content {
+  padding: 30px 15px;
+  min-height: calc(100% - 123px);
+}
+
+.main-panel > .footer {
+  border-top: 1px solid #e7e7e7;
+}
+
+.main-panel .navbar {
+  margin-bottom: 0;
+}
+
+.sidebar,
+.main-panel,
+.sidebar-wrapper,
+.navbar-cmp-fixed .navbar {
+  -webkit-transition-property: top,bottom,width;
+  -webkit-transition-property: top,bottom, width;
+  transition-property: top,bottom, width;
+  -webkit-transition-duration: .2s,.2s, .35s;
+  transition-duration: .2s,.2s, .35s;
+  -webkit-transition-timing-function: linear,linear,ease;
+  transition-timing-function: linear,linear,ease;
+  -webkit-overflow-scrolling: touch;
+}
+
+.main-panel {
+  max-height: 100%;
+  height: 100%;
+}
+
+.table .radio,
+.table .checkbox {
+  position: relative;
+  height: 20px;
+  display: block;
+  width: 20px;
+  padding: 0px 0px;
+  margin: 0px 5px;
+  text-align: center;
+}
+
+.table .radio .icons,
+.table .checkbox .icons {
+  left: 5px;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 12px 8px;
+  vertical-align: middle;
+}
+
+.table > thead > tr > th {
+  border-bottom-width: 1px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #9A9A9A;
+  font-weight: 400;
+  padding-bottom: 5px;
+}
+
+.table .td-actions .btn {
+  opacity: 0.36;
+  filter: alpha(opacity=36);
+}
+
+.table .td-actions .btn.btn-xs {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.table .td-actions {
+  min-width: 90px;
+}
+
+.table > tbody > tr {
+  position: relative;
+}
+
+.table > tbody > tr:hover .td-actions .btn {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* @import "lbd/buttons";
+@import "lbd/misc";
+@import "lbd/inputs";
+
+@import "lbd/alerts";
+
+
+@import "lbd/checkbox-radio-switch";
+@import "lbd/navbars";
+@import "lbd/footers";
+
+// Fancy Stuff
+@import "lbd/dropdown";
+@import "lbd/cards";
+@import "lbd/chartist";
+@import "lbd/responsive";
+ */
+/*# sourceMappingURL=light-bootstrap-dashboard.css.map */

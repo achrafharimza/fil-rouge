@@ -1,0 +1,103 @@
+<div class="card">
+    <p-toast></p-toast>
+    <div class="header">
+
+        <h4 class="title">Absences</h4>
+
+        <!-- <p class="category">Gestions des absences {{date | date: 'yyyy-MM-dd' }}</p> -->
+
+        <p-tag styleClass="mr-2" severity="success" value="{{date | date: 'yyyy-MM-dd' }}"></p-tag>
+
+    </div>
+    <div class="content">
+        <!-- TABLE -->
+        <div class="content">
+            <div class="ct-chart">
+                <div class="table-full-width">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th class="text-center">ID </th>
+                                <th class="text-center"> Nom</th>
+                                <th class="text-center"> Prénom</th>
+
+                                <th class="text-center"> Cne</th>
+                                <th class="text-center"> Phone</th>
+                                <th class="text-center"> présence</th>
+                                <th class="text-center"> Messages</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="button" *ngFor=" let d of pageOfItems">
+                                <td class="text-center">{{d.id}}</td>
+                                <td class="text-center">{{d.nom}}</td>
+                                <td class="text-center">{{d.prenom}}</td>
+                                <td class="text-center">{{d.cne}}</td>
+                                <td class="text-center">{{d.phone}}</td>
+
+
+                                <td>
+                                    <p-toggleButton [ngModel]="d.isAbsent" onLabel="Present" offLabel="Absent"
+                                        onIcon="pi pi-check" offIcon="pi pi-times"
+                                        (onChange)="handleChange($event,d.id)">
+                                    </p-toggleButton>
+
+                                </td>
+
+                                <td>
+                                    <!-- <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"
+                                        rejectButtonStyleClass="p-button-text">
+                                    </p-confirmDialog>
+                                    <p-button (click)="confirm1()" icon="pi pi-check" label="Confirm" styleClass="mr-2">
+                                    </p-button> -->
+
+                                    <button (click)="showBasicDialog(d)" pButton pRipple type="button"
+                                        icon="pi pi-envelope" class="p-button-rounded p-button-warning">
+                                    </button>
+
+                                </td>
+                                <!-- <td class="text-center">
+    
+                                        <button pButton pRipple type="button" icon="pi pi-envelope"
+                                            class="p-button-rounded p-button-warning"></button>
+    
+                                    </td> -->
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p-dialog header="Send message to {{newmessage.etudiantId.nom}} " [(visible)]="displayBasic"
+                        [style]="{width: '50vw'}">
+
+                        <div class="d-flex justify-content-center">
+                            <span class="p-float-label">
+                                <textarea id="float-input" rows="5" cols="50" pInputTextarea [autoResize]="autoResize"
+                                    [(ngModel)]="newmessage.content"></textarea>
+                                <label for="float-input">Message....</label>
+                            </span>
+                        </div>
+
+                        <ng-template pTemplate="footer">
+                            <p-button icon="pi pi-send" (click)="displayBasic=false" label="Send" (click)="sendmsg()"
+                                styleClass="p-button-outlined"></p-button>
+                        </ng-template>
+                    </p-dialog>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <div *ngIf="mode == 'list'" class="legend text-center">
+            <div class="pagination pagination-primary text-center">
+                <jw-pagination [items]="studentsTab" [pageSize]="4" (changePage)="onChangePage($event)">
+                </jw-pagination>
+            </div>
+            <br>
+        </div>
+        <hr *ngIf="true">
+        <div class="stats">
+            Absences © 2022
+        </div>
+    </div>
+</div>

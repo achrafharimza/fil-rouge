@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAC;EACR,gBAAgB,EAAE,eAAe;CAClC;;AAED,AAAA,OAAO,CAAC;EACN,MAAM,EAAE,OAAO;CAChB",
+    "sources": [
+        "menubar.component.scss"
+    ],
+    "names": [],
+    "file": "menubar.component.css"
+}

@@ -1,0 +1,46 @@
+@import "src/assets/sass/light-bootstrap-dashboard-all.scss";
+
+.form-check {
+  padding-left: 0rem;
+}
+.footer {
+  color: #bbb6b6;
+  font-size: 0.7em;
+  margin-top: 30px;
+}
+label {
+  font-weight: 400 !important;
+}
+.legend {
+  width: 100%;
+}
+.p-togglebutton.p-button {
+  background: #c60b0b;
+  border: 1px solid #d61323;
+  color: #495057;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+    box-shadow 0.2s;
+}
+.p-button.p-button-icon-only.p-button-rounded {
+  height: 40px;
+  width: 40px;
+}
+
+@media screen and (max-width: 960px) {
+  button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+:host ::ng-deep {
+  .p-toast-message-custom {
+    background-color: #e1cfe7;
+    border: solid #8a427a;
+    border-width: 0 0 0 6px;
+    color: #2c1e30;
+    .p-toast-icon-close {
+      color: #2c1e30;
+    }
+  }
+}

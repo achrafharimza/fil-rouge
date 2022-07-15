@@ -1,0 +1,91 @@
+<div class="card">
+    <div class="header">
+        <h4 class="title">Messages</h4>
+
+
+    </div>
+    <div class="content">
+
+
+        <div class="content">
+            <div class="ct-chart">
+                <div class="table-full-width">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+
+                                <th class="text-center"> Nom</th>
+                                <th class="text-center"> Email</th>
+                                <th class="text-center"> Message</th>
+                                <th *ngIf="isAdmin()" class="text-center"> Supprimer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="button" *ngFor="let a of pageOfItems" (click)="open(content,a)">
+                                <td class="text-center">{{a.etudiantId.nom}}</td>
+                                <td class="text-center">{{a.etudiantId.email}}</td>
+                                <td class="text-center">{{a.content| slice:0:12}}...</td>
+
+                                <td class="text-center">
+
+                                    <button *ngIf="isAdmin()" title="Modifier" pButton pRipple type="button"
+                                        icon="pi pi-times" class="p-button-rounded p-button-danger"
+                                        (click)="delete($event, a.id)"></button>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="legend text-center">
+                <div class="pagination pagination-primary text-center">
+                    <jw-pagination [items]="messageTab" [pageSize]="3" (changePage)="onChangePage($event)">
+                    </jw-pagination>
+                </div>
+                <br>
+            </div>
+            <hr *ngIf="true">
+            <div class="stats">
+                <i [ngClass]="'fa fa-clock-o'"></i>Absences © 2022
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">
+            <!-- <p-tag styleClass="mr-2" icon="pi pi-user" value="{{messageClicked.etudiantId.nom}}"></p-tag> -->
+
+            <p-chip label="{{messageClicked.etudiantId.nom}}" image="/assets/img/avatar1.png"></p-chip>
+
+
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="dateOfBirth">{{messageClicked.content}}</label>
+                <div class="input-group">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary calendar" type="button"></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <span class="urgence">
+            <p-tag styleClass="mr-2" icon="pi pi-info-circle" severity="info" value="{{messageClicked.date}}">
+            </p-tag>
+
+
+        </span>
+    </div>
+</ng-template>
